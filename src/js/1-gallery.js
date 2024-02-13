@@ -76,8 +76,8 @@ const markup = images.map(image => {
     <img
       class="gallery-image"
       src="${small}"
-      data-source="${big}"
       alt="${alt}"
+      title="${alt}"
     />
   </a>
 </li>`;
@@ -86,7 +86,5 @@ const markup = images.map(image => {
 
 galleryList.insertAdjacentHTML("beforeend", markup);
 
-const gallery = new SimpleLightbox('.gallery a', { captionDelay: 250, captionData: "alt"});
+const gallery = new SimpleLightbox('.gallery a', { captionDelay: 250, captionData: "title",});
 
-gallery.on('show.simplelightbox', function () {
-});
